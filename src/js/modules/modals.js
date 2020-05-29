@@ -3,7 +3,7 @@ const modals = () => {
 		const trigger = document.querySelectorAll(triggerSelector);
 		const modal = document.querySelector(modalSelector);
 		const close = document.querySelector(closeSelector);
-		trigger.forEach(item =>{
+		trigger.forEach(item => {
 			item.addEventListener('click' , (evt) => {
 				if(evt.target){
 					evt.preventDefault();
@@ -26,15 +26,17 @@ const modals = () => {
 			}
 		})
 	}
-	function showModalByTime(selector, time){
-		setTimeout(()=>{
+
+	function showModalByTime(selector , time){
+		setTimeout(() => {
 			document.querySelector(selector).style.display = 'block';
 			document.body.style.overflow = 'hidden';
-		}, time)
+		} , time)
 	}
+
 	bindModal('.popup_engineer_btn' , '.popup_engineer' , '.popup_engineer' +
 		' .popup_close');
-	bindModal('.phone_link', '.popup', '.popup .popup_close');
+	bindModal('.phone_link' , '.popup' , '.popup .popup_close');
 	// showModalByTime('.popup', 60000);
 };
 
